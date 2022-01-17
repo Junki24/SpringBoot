@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>View Test Page</title></head>
 <body><h2>Hello! ${name}</h2>
-<div>JSP List Test232344gggggg</div>
+<div>JSP List Test232344ggggggteet</div>
 <c:forEach var="item" items="${list}" varStatus="idx"> ${idx.index}, ${item} <br/> </c:forEach>
 </body>
 </html>
