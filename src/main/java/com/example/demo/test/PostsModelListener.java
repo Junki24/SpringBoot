@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PostsModelListener extends AbstractMongoEventListener<Posts> {
 
+
     private final SequenceGeneratorService sequenceGeneratorService;
 
     @Override
