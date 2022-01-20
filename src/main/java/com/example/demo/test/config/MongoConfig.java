@@ -1,11 +1,15 @@
 package com.example.demo.test.config;
 
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
 import org.springframework.data.mongodb.core.MongoTemplate;
+
+import java.util.Arrays;
 
 @Configuration
 public class MongoConfig extends AbstractMongoClientConfiguration {
@@ -27,6 +31,12 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
     MongoTemplate mongoTemplate() throws Exception {
         return new MongoTemplate((MongoClient) mongoClient(), database);
     }
+
+//    @Override
+//    public MongoClient mongoClient() {
+//        MongoCredential credential = MongoCredential.createCredential(userName, database, password.toCharArray());
+//        return new MongoClient(new ServerAddress("localhost",27017), Arrays.asList(credential));
+//    }
 
     @Override
     protected String getDatabaseName() {
