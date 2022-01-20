@@ -16,6 +16,7 @@
             $("#btnLogin").click(function(){
                 $("#form1").attr("action","/member/login_check.do");
                 $("#form1").submit();
+
             });
 
 
