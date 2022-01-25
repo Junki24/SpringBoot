@@ -12,7 +12,7 @@ import java.beans.Transient;
 @Document(collection = "posts")
 public class Posts {
 
-    @Transient
+//    @Transient
     public static final String SEQUENCE_NAME = "posts_sequence";
 
     @Id

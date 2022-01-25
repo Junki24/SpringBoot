@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/member/*")
 public class MemberController {
@@ -31,5 +33,15 @@ public class MemberController {
         dto.setName(name);
         memberService.join(dto); //mongodb에 insert됨
         return "redirect:/member/login.do"; //로그인 화면으로 이동
+    }
+
+    @RequestMapping("logout.do")
+    public String logout(HttpSession session) {
+
+        //세션 정보 초기화
+        session.invalidate();
+
+        //로그인 페이지로 이동
+        return "redirect:/member/login.do";
     }
 }
